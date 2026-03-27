@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Apply now for the Global Vision Assembly a fully-funded international opportunity for emerging leaders."/>
+  <meta name="keywords" content="Global Vision Assembly, funded opportunity, leadership, apply now"/>
+  <meta property="og:title" content="Global Vision Assembly - Apply Now"/>
+  <meta property="og:description" content="Join world leaders. Apply for a fully-funded opportunity today."/>
+  <title>Global Vision Assembly - Apply Now</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Global Vision Assembly</div>
+    <a class="nav-cta" href="#apply">Apply Now</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <h1>Shape the Future.<br/><span>Your Seat at the Table</span> Awaits.</h1>
+    <p>Join 500+ emerging leaders from 80+ countries at the world's most impactful student assembly.</p>
+    <a class="btn-gold" href="#apply">Apply Now — It's Free</a>
+  </section>
+
+  <!-- BENEFITS -->
+  <section id="benefits">
+    <div class="container">
+      <div class="section-label">Why Apply</div>
+      <h2>What You'll Gain</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">🌍</div>
+          <h3>Global Network</h3>
+          <p>Connect with delegates, diplomats, and changemakers from every continent.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🎓</div>
+          <h3>Skills & Workshops</h3>
+          <p>Hands-on sessions in leadership, policy, public speaking, and diplomacy.</p>
+        </div>
+        <div class="card">
+          <div class="icon">💼</div>
+          <h3>Career Opportunities</h3>
+          <p>Get noticed by top NGOs, think-tanks, and international organisations.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📜</div>
+          <h3>Certificate of Merit</h3>
+          <p>Recognised credential to add to your academic and professional portfolio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section id="highlights">
+    <div class="container">
+      <div class="section-label" style="color:#c9a84c">Event Highlights</div>
+      <h2>By the Numbers</h2>
+      <div class="highlights-grid">
+        <div class="highlight-item"><div class="num">500+</div><p>Delegates Worldwide</p></div>
+        <div class="highlight-item"><div class="num">80+</div><p>Countries Represented</p></div>
+        <div class="highlight-item"><div class="num">3</div><p>Days of Programming</p></div>
+        <div class="highlight-item"><div class="num">40+</div><p>Expert Speakers</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-label">Social Proof</div>
+      <h2>What Past Delegates Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <p>"This assembly completely changed how I view global leadership. The connections I made are priceless."</p>
+          <div class="author">— Amara T., Nigeria 🇳🇬</div>
+        </div>
+        <div class="testimonial">
+          <p>"The most intellectually stimulating event I've attended. World-class organisation and content."</p>
+          <div class="author">— Daniel K., Germany 🇩🇪</div>
+        </div>
+        <div class="testimonial">
+          <p>"Landed my internship at the UN three months after attending. I owe it to this network."</p>
+          <div class="author">— Sofia R., Brazil 🇧🇷</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section id="cta-band">
+    <div class="container">
+      <h2>Ready to Make Your Mark?</h2>
+      <a class="btn-gold" href="#apply" style="background:var(--navy);color:white">Apply Now</a>
+    </div>
+  </section>
+
+  <!-- APPLICATION FORM -->
+  <section id="apply">
+    <div class="container">
+      <div class="section-label">Application</div>
+      <h2>Apply in 3 Simple Steps</h2>
+
+      <div class="form-wrapper" id="form-container">
+        <div class="progress-bar">
+          <span class="active" id="pb1"></span>
+          <span id="pb2"></span>
+          <span id="pb3"></span>
+        </div>
+        <p class="step-label" id="step-label">Step 1 of 3</p>
+
+        <!-- STEP 1 -->
+        <div class="step active" id="step1">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="name" placeholder="Jane Doe"/>
+            <span class="error-msg" id="err-name">Please enter your full name.</span>
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" id="email" placeholder="jane@example.com"/>
+            <span class="error-msg" id="err-email">Please enter a valid email.</span>
+          </div>
+          <div class="form-group">
+            <label>Country *</label>
+            <input type="text" id="country" placeholder="United States"/>
+            <span class="error-msg" id="err-country">Please enter your country.</span>
+          </div>
+          <div class="form-nav">
+            <span></span>
+            <button class="btn-gold" onclick="nextStep(1)">Next →</button>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step" id="step2">
+          <div class="form-group">
+            <label>Application Category *</label>
+            <select id="category" onchange="updateStep3()">
+              <option value="">— Select a category —</option>
+              <option value="funded">Fully Funded</option>
+              <option value="invitation">Invitation Letter</option>
+              <option value="self">Self-Funded</option>
+            </select>
+            <span class="error-msg" id="err-category">Please select a category.</span>
+          </div>
+          <div class="form-nav">
+            <button class="btn-outline" onclick="prevStep(2)">← Back</button>
+            <button class="btn-gold" onclick="nextStep(2)">Next →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step" id="step3">
+          <div id="fields-funded" style="display:none">
+            <div class="form-group">
+              <label>Motivation *</label>
+              <textarea id="motivation" placeholder="Why do you deserve this opportunity?"></textarea>
+              <span class="error-msg" id="err-motivation">Please write your motivation.</span>
+            </div>
+          </div>
+          <div id="fields-invitation" style="display:none">
+            <div class="form-group">
+              <label>Passport Number *</label>
+              <input type="text" id="passport" placeholder="A12345678"/>
+              <span class="error-msg" id="err-passport">Please enter your passport number.</span>
+            </div>
+            <div class="form-group">
+              <label>Purpose of Travel *</label>
+              <input type="text" id="purpose" placeholder="Conference attendance"/>
+              <span class="error-msg" id="err-purpose">Please enter your purpose of travel.</span>
+            </div>
+          </div>
+          <div id="fields-self" style="display:none">
+            <div class="form-group checkbox-group">
+              <input type="checkbox" id="budget"/>
+              <label for="budget">I confirm I can cover my own travel and accommodation costs *</label>
+            </div>
+            <span class="error-msg" id="err-budget">Please confirm your budget.</span>
+          </div>
+          <div id="summary-box" style="display:none">
+            <strong>Review Your Application:</strong>
+            <div id="summary-content"></div>
+          </div>
+          <div class="form-nav">
+            <button class="btn-outline" onclick="prevStep(3)">← Back</button>
+            <button class="btn-gold" onclick="submitForm()">Submit Application</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thank You -->
+      <div id="thankyou">
+        <div class="ty-icon">🎉</div>
+        <h2>Application Submitted!</h2>
+        <p>Thank you for applying. We'll be in touch within 5 business days.</p>
+        <p class="ref-id" id="submission-log"></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Global Vision Assembly. All rights reserved.
+  </footer>
+
+  <!-- EMAIL POPUP -->
+  <div id="popup-overlay">
+    <div id="popup">
+      <button class="close-btn" onclick="closePopup()">✕</button>
+      <h3>Stay Updated</h3>
+      <p>Get notified about new opportunities, deadlines, and events.</p>
+      <input type="email" id="popup-email" placeholder="your@email.com"/>
+      <button class="btn-gold" onclick="savePopupEmail()">Notify Me</button>
+      <div id="popup-success">✅ You're on the list!</div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
