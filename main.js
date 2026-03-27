@@ -1,4 +1,4 @@
-// POPUP LOGIC
+//POPUP LOGIC
 
 let popupShown = false;
 
@@ -6,7 +6,7 @@ setTimeout(() => {
   if (!popupShown) showPopup();
 }, 8000);
 
-// Show popup on exit intent (mouse leaves top of page)
+
 document.addEventListener('mouseleave', (e) => {
   if (e.clientY < 5 && !popupShown) showPopup();
 });
@@ -47,16 +47,14 @@ function updateProgress(step) {
 }
 
 function showStep(step) {
-  // Hide all steps
   document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-  // Show the target step
   document.getElementById('step' + step).classList.add('active');
   updateProgress(step);
 }
 
 function nextStep(from) {
-  if (!validateStep(from)) return; // stop if validation fails
-  if (from === 2) buildSummary();  // build summary before step 3
+  if (!validateStep(from)) return; 
+  if (from === 2) buildSummary();  
   showStep(from + 1);
 }
 
@@ -64,7 +62,6 @@ function prevStep(from) {
   showStep(from - 1);
 }
 
-// Show/hide dynamic fields based on category selection
 function updateStep3() {
   const cat = document.getElementById('category').value;
   document.getElementById('fields-funded').style.display     = cat === 'funded'     ? 'block' : 'none';
@@ -72,12 +69,10 @@ function updateStep3() {
   document.getElementById('fields-self').style.display       = cat === 'self'       ? 'block' : 'none';
 }
 
-// Show or hide an error message
 function showError(id, show) {
   document.getElementById(id).style.display = show ? 'block' : 'none';
 }
 
-// Validate step 1 and step 2 fields
 function validateStep(step) {
   let valid = true;
 
@@ -99,7 +94,6 @@ function validateStep(step) {
   return valid;
 }
 
-// Validate step 3 dynamic fields
 function validateStep3() {
   const cat = document.getElementById('category').value;
   let valid = true;
@@ -127,7 +121,6 @@ function validateStep3() {
   return valid;
 }
 
-// Build the summary shown before final submission
 function buildSummary() {
   const cat = document.getElementById('category').value;
   const labels = { funded: 'Fully Funded', invitation: 'Invitation Letter', self: 'Self-Funded' };
@@ -141,11 +134,10 @@ function buildSummary() {
   document.getElementById('summary-box').style.display = 'block';
 }
 
-// Final form submission
 function submitForm() {
   if (!validateStep3()) return;
 
-  // Save submission to localStorage (Task 6 Bonus)
+  //Save submission to localStorage (Task 6 Bonus)
   const submission = {
     name:      document.getElementById('name').value,
     email:     document.getElementById('email').value,
@@ -158,7 +150,6 @@ function submitForm() {
   submissions.push(submission);
   localStorage.setItem('form_submissions', JSON.stringify(submissions));
 
-  // Hide form, show thank you message
   document.getElementById('form-container').style.display = 'none';
   document.getElementById('thankyou').style.display = 'block';
 
